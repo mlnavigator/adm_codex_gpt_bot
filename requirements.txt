@@ -1,0 +1,9 @@
+openai
+aiogram
+sklearn
+torch
+transformers
+numpy
+pickle
+pymorphy2
+tqdm
