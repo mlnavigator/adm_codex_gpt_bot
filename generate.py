@@ -25,7 +25,7 @@ def get_messages(q, context):
 
 def generate(q, context, model_id='gpt-4'):
     messages = get_messages(q, context)
-    for _ in range(10):
+    for cnt in range(10):
         cought = None
         try:
             res = openai.ChatCompletion.create(
@@ -36,7 +36,7 @@ def generate(q, context, model_id='gpt-4'):
                 )
         except Exception as e:
             print(e)
-            time.sleep(10 * (1 + e/3))
+            time.sleep(10 * (1 + cnt/3))
             cought = e
             continue
         break
