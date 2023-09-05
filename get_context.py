@@ -115,6 +115,6 @@ def get_context(q):
     context = []
     for i in res_ind:
         t = data[i]
-        if len(context) + len(t[2]) <= max_len:
+        if sum([len(d[2]) for d in context]) + len(t[2]) <= max_len:
             context.append(t)
     return context
